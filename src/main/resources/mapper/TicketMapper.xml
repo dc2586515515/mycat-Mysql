@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.mycatMysql.mapper.TicketMapper">
+    <insert id="addTicket" parameterType="com.dc.mycatMysql.pojo.Ticket">
+        insert into  u_04_zcfg.ticket(
+          ticket_id,
+          startting,
+          destination,
+          price,
+          beginTime
+        )  values (
+          #{vo.ticketID},
+          #{vo.startting},
+          #{vo.destination},
+          #{vo.price},
+          #{vo.beginTime}
+        )
+    </insert>
+    
+    <select id="getTicket" resultType="com.dc.mycatMysql.pojo.Ticket">
+           select * from u_04_zcfg.ticket
+    </select>
+
+</mapper>
